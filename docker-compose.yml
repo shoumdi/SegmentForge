@@ -1,0 +1,12 @@
+services:
+  classifier:
+    container_name: classifier
+    build:
+      context: ./docker/python
+    volumes:
+      - ./artifacts:/app/artifacts
+      - ./scripts:/app/scripts
+      - ./data:/app/data
+      - ./app.py:/app/app.py
+    ports:
+      - "8501:8501"
